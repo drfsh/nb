@@ -1,0 +1,255 @@
+#app {
+    color: #2c3e50;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body * {
+    transition: 0.3s;
+    user-select: none;
+}
+
+.shadow{
+    box-shadow: 0 2px 19px -8px #0000007d;
+}
+.header {
+    top: 0;
+    height: 60px;
+    background: #42b983;
+    width: 100%;
+    box-shadow: 0 2px 19px -8px #0000007d;
+    position: fixed;
+    z-index: 100;
+}
+
+.header .header__body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.header .header__body .header_title {
+    background: aliceblue;
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 17px;
+    font-weight: bold;
+    box-shadow: 0 2px 19px -8px #0000007d;
+}
+
+.header .header__body .menu {
+    position: absolute;
+    right: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: aliceblue;
+    border-radius: 22px;
+    padding: 4px;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 2px 19px -8px #0000007d;
+}
+
+.slider-menu {
+    width: 75%;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    background: #9e9e9e2e;
+    margin-right: -80%;
+    box-shadow: 3px 0 13px -4px #00000047 inset;
+    direction: rtl;
+    padding-top: 8px;
+}
+
+.slider-menu .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    margin: 5px 10px;
+    height: 40px;
+    border-radius: 10px;
+    background: #2c3e50;
+    color: white;
+    box-shadow: 0 2px 19px -8px #0000007d;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-menu .list-items {
+    height: 0;
+    overflow: hidden;
+    padding: 0 8px;
+}
+
+.slider-menu .item .name__icon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.slider-menu .item .name__icon .name {
+    font-size: 18px;
+    margin-right: 11px;
+}
+
+.slider-menu.show {
+    margin-right: 0;
+}
+
+.rotate-90 {
+    transform: rotate(180deg);
+}
+.rotate--90 {
+    transform: rotate(-90deg);
+}
+
+.rotate-135 {
+    transform: rotate(135deg);
+}
+
+.rotate-45 {
+    transform: rotate(45deg);
+}
+
+.opacity-02 {
+    opacity: 0;
+}
+
+.main_body {
+    margin-top: 60px;
+    direction: rtl;
+    padding: 15px;
+}
+
+.show_slide .main_body {
+    transform: translateX(-80%);
+}
+
+
+.list_menu .item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 12px;
+    box-shadow: 0 2px 19px -8px #000000 inset;
+}
+.list_menu .item img{
+    width: 100%;
+    filter:brightness(0.9);
+    z-index: -1;
+}
+.list_menu .item span{
+    position: absolute;
+    font-size: 24px;
+    border-radius: 10px;
+    width: 93%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    color: #2c3e50;
+    box-shadow: 0 2px 19px -8px #0000007d;
+    text-shadow: 3px 2px 4px #00000061;
+}
+/*start.animations*/
+.trans-enter-active {
+    position: absolute;;
+    animation: trans-in 0.3s;
+}
+
+.trans-leave-active {
+    position: absolute;
+    animation: trans-out 0.3s;
+}
+
+.trans-back-enter-active {
+    position: absolute;;
+    animation: trans-out 0.3s reverse;
+
+}
+
+.trans-back-leave-active {
+    position: absolute;
+    animation: trans-in 0.3s reverse;
+}
+
+@keyframes trans-out {
+    0% {
+        opacity: 1;
+        transform: translateX(0px)
+    }
+    60% {
+        opacity: 0.4;
+        transform: translateX(8px)
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-30px)
+    }
+}
+
+@keyframes trans-in {
+    0% {
+        opacity: 0;
+        transform: translateX(30px)
+    }
+
+    60% {
+        opacity: 0.6;
+        transform: translateX(-8px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px)
+    }
+}
+
+/*end.animation*/
+
+/*start.btn start*/
+
+button {
+    position: relative;
+    overflow: hidden;
+    transition: background 400ms;
+    color: #fff;
+    background-color: #6200ee;
+    padding: 1rem 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    outline: 0;
+    border: 0;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3); /* black with 30% opacity */
+    cursor: pointer;
+}
+
+span.ripple {
+    position: absolute;
+    border-radius: 50%!important;
+    transform: scale(0);
+    animation: ripple 600ms linear;
+    background-color: rgba(85, 104, 123, 0.52) !important;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/*end.btn start*/
