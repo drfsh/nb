@@ -1,27 +1,21 @@
 <template>
-  <MainHeader></MainHeader>
-  <section class="main_body">
-    <div class="list_menu">
-      <div class="btn item shadow">
-        <img src="../../assets/image/1.jpg">
-        <span>خطبه ها</span>
-      </div>
+  <section class="main_body row">
+    <item-hack></item-hack>
+    <item-pixely></item-pixely>
+    <item-info></item-info>
+    <img style="width: 100%;" src="../../assets/image/po1.jpg" alt=""/>
 
-      <div class="btn item">
-        <img src="../../assets/image/8.jpg">
-        <span>آیات</span>
-      </div>
-
-    </div>
   </section>
 </template>
 
 <script>
-import MainHeader from "@/components/header/MainHeader";
+import ItemPixely from "@/components/main/item-pixely";
+import ItemInfo from "@/components/main/item-info";
+import ItemHack from "@/components/main/item-hack";
 
 export default {
   name: "home_page",
-  components: {MainHeader},
+  components: { ItemHack, ItemInfo, ItemPixely },
   mounted() {
     function createRipple(event) {
       const button = event.currentTarget;
@@ -43,6 +37,7 @@ export default {
 
       button.appendChild(circle);
     }
+
     const buttons = document.getElementsByClassName("btn");
     for (const button of buttons) {
       button.addEventListener("click", createRipple);
