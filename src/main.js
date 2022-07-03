@@ -8,7 +8,6 @@ window.axios = axios
 window.title = "DRFSH"
 window.url = 'https://teetup.iran.liara.run/api/wwh/'
 
-
 const app = Vue.createApp(App)
 app.use(VueAxios, axios)
 app.use(router)
